@@ -2,4 +2,23 @@ type Query {
     # section 01
     hello: String
     helloTo(name: String): String
+
+    # section 02
+    customers: [Customer]
+    customerById(id: ID!): Customer
+    customersByName(name: String!): [Customer]
+    customersByAge(ageFilter: AgeFilter): [Customer]
+}
+
+# section 02
+type Customer {
+    id: ID!
+    name: String!
+    email: String!
+    age: Int
+}
+
+input AgeFilter {
+    minAge: Int
+    maxAge: Int
 }
