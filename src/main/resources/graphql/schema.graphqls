@@ -14,6 +14,9 @@ type Query {
 
     # section 04
     bookStoreDtos: [BookStoreDto]!
+
+    # section 05
+    level1: Level1
 }
 
 # section 02
@@ -52,3 +55,25 @@ type BookStoreDto {
     name: String!
     books: [Book]!
 }
+
+# section 05
+type Level1 {
+    level2: Level2
+}
+
+type Level2 {
+    level3: Level3
+}
+
+type Level3 {
+    level4: Level4
+}
+
+type Level4 {
+    level5: Level5
+}
+
+type Level5 {
+    id: ID!
+}
+
