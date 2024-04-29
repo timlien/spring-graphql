@@ -11,6 +11,9 @@ type Query {
 
     # section 03
     bookStores: [BookStore]!
+
+    # section 04
+    bookStoreDtos: [BookStoreDto]!
 }
 
 # section 02
@@ -41,4 +44,11 @@ type Book {
     id: ID!
     title: String!
     bookStoreId: ID!
+}
+
+# section 04
+type BookStoreDto {
+    id: ID!
+    name: String!
+    books: [Book]!
 }
