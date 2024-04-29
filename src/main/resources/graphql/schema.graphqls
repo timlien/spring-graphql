@@ -8,6 +8,9 @@ type Query {
     customerById(id: ID!): Customer
     customersByName(name: String!): [Customer]
     customersByAge(ageFilter: AgeFilter): [Customer]
+
+    # section 03
+    bookStores: [BookStore]!
 }
 
 # section 02
@@ -21,4 +24,21 @@ type Customer {
 input AgeFilter {
     minAge: Int
     maxAge: Int
+}
+
+# section 03
+type BookStore {
+    id: ID!
+    name: String!
+    books: [Book]!
+    booksWithLimit(limit: Int!): [Book]!
+    booksConcurrent: [Book]!
+    booksWithoutNPlus1ByList: [Book]!
+    booksWithoutNPlus1ByMap: [Book]!
+}
+
+type Book {
+    id: ID!
+    title: String!
+    bookStoreId: ID!
 }
