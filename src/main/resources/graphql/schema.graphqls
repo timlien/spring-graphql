@@ -17,6 +17,10 @@ type Query {
 
     # section 05
     level1: Level1
+
+    # section 06
+    car: Car
+    products: [Product]
 }
 
 # section 02
@@ -77,3 +81,40 @@ type Level5 {
     id: ID!
 }
 
+# section 06
+scalar Long
+scalar Byte
+scalar Short
+scalar BigDecimal
+scalar BigInteger
+scalar Date
+scalar LocalTime
+scalar DateTime
+scalar Object
+
+type Car {
+    number: ID!
+    name: String
+    height: Int
+    tank: Float
+    secondHand: Boolean
+    serialNumber: Long
+    ageInYears: Byte
+    ageInMonths: Short
+    price: BigDecimal
+    distance: BigInteger
+    createDate: Date
+    createTime: LocalTime
+    createDateTime: DateTime
+    Type: CarType
+}
+
+enum CarType {
+    MAZDA
+    BMW
+}
+
+type Product{
+    name: String
+    attributes: Object
+}
