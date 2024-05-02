@@ -21,6 +21,9 @@ type Query {
     # section 06
     car: Car
     products: [Product]
+
+    # section 07
+    items: [Item]
 }
 
 # section 02
@@ -117,4 +120,28 @@ enum CarType {
 type Product{
     name: String
     attributes: Object
+}
+
+# section 07
+interface Item {
+    id: ID!
+    price: Float
+}
+
+type Food implements Item {
+    id: ID!
+    price: Float
+    expiryDate: Date
+}
+
+type Electronic implements Item {
+    id: ID!
+    price: Float
+    warranty: Int
+}
+
+type Furniture implements Item {
+    id: ID!
+    price: Float
+    material: String
 }
