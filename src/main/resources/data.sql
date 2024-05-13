@@ -17,3 +17,9 @@ VALUES ('Book Store 1 Book 1', 1),
        ('Book Store 2 Book 2', 2),
        ('Book Store 3 Book 1', 3),
        ('Book Store 3 Book 2', 3);
+
+-- Section 09
+INSERT INTO account (name, age)
+VALUES ('John Doe', 20),
+       ('Jane Doe', 30),
+       ('Tom Smith', 40);

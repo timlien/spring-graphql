@@ -27,6 +27,16 @@ type Query {
 
     # section 08
     search: [SearchResult]
+
+    # section 09
+    accounts: [Account]
+    accountById(id: ID!): Account
+}
+
+type Mutation {
+    createAccount(accountDto: AccountDto!): Account
+    updateAccount(id: ID!, accountDto: AccountDto!): Account
+    deleteAccount(id: ID!): DeleteResponseDto!
 }
 
 # section 02
@@ -162,4 +172,26 @@ type Map {
 
 type Website {
     url: String
+}
+
+# section 09
+type Account {
+    id: ID!
+    name: String
+    age: Int
+}
+
+input AccountDto {
+    name: String
+    age: Int
+}
+
+type DeleteResponseDto {
+    id: ID!
+    status: Status
+}
+
+enum Status {
+    SUCCESS
+    FAILURE
 }
